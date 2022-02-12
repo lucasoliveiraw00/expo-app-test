@@ -1,0 +1,119 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "prettier",
+    "import",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".ts", ".tsx"] }
+    ],
+    "react/function-component-definition": [
+      "off",
+      { "namedComponents": "arrow-function" }
+    ],
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "allowFunctions": true,
+        "allowArrowFunctions": true
+      }
+    ],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "enforce",
+        "custom": "ignore",
+        "explicitSpread": "enforce"
+      }
+    ],
+
+    "no-use-before-define": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-alert": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": ["@features/*/*", "*/features/*/*", "**/features/*/*"],
+        "patterns": ["@features/*/*", "*/features/*/*", "**/features/*/*"]
+      }
+    ],
+
+    "camelcase": "off",
+
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      }
+    ],
+
+    "import/max-dependencies": [1, { "max": 15 }],
+    "import/no-unresolved": "off",
+    "import/extensions": ["error", "never", { "ignorePackages": true }],
+    "import/no-named-as-default": "off",
+    "import/prefer-default-export": "off",
+
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "endOfLine": "auto"
+      }
+    ],
+
+    "react/style-prop-object": [
+      "error",
+      {
+        "allow": ["StatusBar"]
+      }
+    ]
+  }
+}
